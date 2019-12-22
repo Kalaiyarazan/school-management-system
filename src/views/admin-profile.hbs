@@ -1,0 +1,27 @@
+{{>adminNav}}
+
+<div class="row m-3" style="height: 100vh">
+  <div class="col-12 p-3">
+
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Admin ID</th>
+          <th scope="col">Admin Name</th>
+          <th scope="col">Admin Email</th>
+          <th scope="col">Added/Modified On</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each admins}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.fullName}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.updatedAt}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+  </div>

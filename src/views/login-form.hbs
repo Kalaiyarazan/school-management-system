@@ -1,0 +1,19 @@
+<div class="container p-5">
+  <div class="d-block shadow w-50 p-5 m-auto">
+    <h2 class="text-center">{{role}}</h2>
+    <form action="/{{role}}/login" method="POST">
+      <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <label class="form-check-label"><input type="checkbox"> Remember me</label>
+      </div>
+      <button type="submit" class="btn btn-primary" value="submit">Sign in</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+{{>adminNav}}
+{{!-- <div class="container"> --}}
+<div class="row m-3" style="height: 100vh">
+  <div class="col-8 p-3">
+
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Teacher ID</th>
+          <th scope="col">Teacher Name</th>
+          <th scope="col">Teacher Email</th>
+          <th scope="col">Assigned Class</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each teachers}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.fullName}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.course}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+  </div>
+  <div class="col-4 p-3 border">
+    <h4 class="text-center">Add a New Record</h4>
+    <hr class="pb-3">
+    <form action="/admin/teacher" method="POST">
+      {{!-- <div class="form-group">
+        <label for="teacherId"> Teacher ID</label>
+        <input name="teacherId" type="text" class="form-control" id="teacherId" placeholder="Enter teacher ID">
+      </div> --}}
+      <div class="form-group">
+        <label for="teacherName">Teacher Name</label>
+        <input name="fullName" type="text" class="form-control" id="teacherName" placeholder="Enter teacher Name">
+      </div>
+      <div class="form-group">
+        <label for="course">Assign a Class</label>
+        <input name="course" type="text" class="form-control" id="course" placeholder="Enter teacher Name">
+      </div>
+      {{!-- 
+      <div class="form-group">
+        <label for="course">Assign Class</label>
+        <select class="form-control" id="course">ddd
+          {{#each courses}}
+          <option value="{{this.course}}">{{this.course}}</option>
+          {{/each}}
+        </select>
+      </div> --}}
+
+
+
+      <div class="form-group">
+        <label for="teacherEmail">Teacher Email</label>
+        <input name="email" type="text" class="form-control" id="teacherEmail" placeholder="Enter teacher Email">
+      </div>
+      <div class="form-group">
+        <label for="teacherPassword">Teacher Password (Temporary)</label>
+        <input name="password" type="text" class="form-control" id="teacherPassword" placeholder="Default Password"
+          value="teacher" readonly>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+</div>

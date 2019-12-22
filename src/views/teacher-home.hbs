@@ -1,0 +1,116 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/teacher/{{teacherId}}">Teacher Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active ml-5 mr-3">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active ml-5 mr-3">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active ml-5 mr-3">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active ml-5 mr-3">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <div class="text-right">
+      <a class="mr-5" href="/teacher/profile/{{teacherId}}">
+        <img
+          src="https://cdn1.iconfinder.com/data/icons/navigation-elements/512/user-login-man-human-body-mobile-person-512.png"
+          width="5%" alt="profile">
+      </a>
+      <a class="ml-3 mr-5" href="/teacher/signout">
+        <img
+          src="https://cdn1.iconfinder.com/data/icons/materia-arrows-symbols-vol-3/24/018_128_arrow_exit_logout-512.png"
+          width="5%" alt="profile">
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+{{!-- <div class="container"> --}}
+<div class="row m-3" style="height: 100vh">
+  <div class="col-8 p-3">
+
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Student ID</th>
+          <th scope="col">Class</th>
+          <th scope="col">Exam Name</th>
+          <th scope="col">Tamil</th>
+          <th scope="col">English</th>
+          <th scope="col">Maths</th>
+          {{!-- <th scope="col">Science</th>
+          <th scope="col">Social</th> --}}
+        </tr>
+      </thead>
+      <tbody>
+        {{#each marks}}
+        <tr>
+          <td>{{this.studentId}}</td>
+          <td>{{this.course}}</td>
+          <td>{{this.exam}}</td>
+          <td>{{this.tamil}}</td>
+          <td>{{this.english}}</td>
+          <td>{{this.maths}}</td>
+          {{!-- <td>{{this.science}}</td>
+          <td>{{this.social}}</td> --}}
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+  </div>
+  <div class="col-4 p-3 border">
+    <h4 class="text-center">Add Marks</h4>
+    <hr class="pb-1">
+    <form action="/teacher/:id" method="POST">
+      {{!-- <div class="form-group">
+        <label for="studentId"> Student ID</label>
+        <input name="studentId" type="text" class="form-control" id="studentId" placeholder="Enter student ID">
+      </div> --}}
+      <div class="form-group">
+        <label for="studentId">Student ID</label>
+        <input name="studentId" type="text" class="form-control" id="studentId" placeholder="Enter Student ID">
+      </div>
+      <div class="form-group">
+        <label for="course">Class</label>
+        <input name="course" type="text" class="form-control" id="course" placeholder="Enter Class Name">
+      </div>
+      <div class="form-group">
+        <label for="exam">Exam</label>
+        <input name="exam" type="text" class="form-control" id="exam" placeholder="Enter Exam Name">
+      </div>
+      <div class="form-group">
+        <label for="tamil">Tamil</label>
+        <input name="tamil" type="text" class="form-control" id="tamil" placeholder="Enter Mark">
+      </div>
+      <div class="form-group">
+        <label for="english">English</label>
+        <input name="english" type="text" class="form-control" id="english" placeholder="Enter Mark">
+      </div>
+      <div class="form-group">
+        <label for="maths">Maths</label>
+        <input name="maths" type="text" class="form-control" id="maths" placeholder="Enter Mark">
+      </div>
+      {{!-- <div class="form-group">
+        <label for="science">Science</label>
+        <input name="science" type="text" class="form-control" id="science" placeholder="Enter Mark">
+      </div>
+      <div class="form-group">
+        <label for="social">Social</label>
+        <input name="social" type="text" class="form-control" id="social" placeholder="Enter Mark">
+      </div> --}}
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+</div>

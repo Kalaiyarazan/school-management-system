@@ -1,0 +1,35 @@
+{{>adminNav}}
+{{!-- <div class="container"> --}}
+<div class="row m-3" style="height: 100vh">
+  <div class="col-8 p-3">
+
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Subject ID</th>
+          <th scope="col">Subject</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each subjects}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.subject}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+  </div>
+  <div class="col-4 p-3 border">
+    <h4 class="text-center">Add a New Record</h4>
+    <hr class="pb-3">
+    <form action="/admin/subject" method="POST">
+      <div class="form-group">
+        <label for="subject"> Subject</label>
+        <input name="subject" type="text" class="form-control" id="subject" placeholder="Enter subject name">
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+</div>

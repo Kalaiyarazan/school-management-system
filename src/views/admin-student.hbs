@@ -1,0 +1,70 @@
+{{>adminNav}}
+{{!-- <div class="container"> --}}
+<div class="row m-3" style="height: 100vh">
+  <div class="col-8 p-3">
+
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Student ID</th>
+          <th scope="col">Student Name</th>
+          <th scope="col">Student Email</th>
+          <th scope="col">Assigned Class</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each students}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.fullName}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.course}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+  </div>
+  <div class="col-4 p-3 border">
+    <h4 class="text-center">Add a New Record</h4>
+    <hr class="pb-3">
+    <form action="/admin/student" method="POST">
+      {{!-- <div class="form-group">
+        <label for="studentId"> Student ID</label>
+        <input name="studentId" type="text" class="form-control" id="studentId" placeholder="Enter student ID">
+      </div> --}}
+      <div class="form-group">
+        <label for="studentName">Student Name</label>
+        <input name="fullName" type="text" class="form-control" id="studentName" placeholder="Enter student Name">
+      </div>
+      <div class="form-group">
+        <label for="course">Assign a Class</label>
+        <input name="course" type="text" class="form-control" id="course" placeholder="Enter Class Name">
+      </div>
+      {{!-- 
+      <div class="form-group">
+        <label for="course">Assign Class</label>
+        <select class="form-control" id="course">
+          {{#each courses}}
+          <option value="{{this.course}}">{{this.course}}</option>
+          {{/each}}
+        </select>
+      </div> --}}
+
+
+
+      <div class="form-group">
+        <label for="studentEmail">Student Email</label>
+        <input name="email" type="text" class="form-control" id="studentEmail" placeholder="Enter student Email">
+      </div>
+      <div class="form-group">
+        <label for="studentPassword">Student Password (Temporary)</label>
+        <input name="password" type="text" class="form-control" id="studentPassword" placeholder="Default Password"
+          value="student" readonly>
+      </div>
+
+      {{!-- <input class="form-control" type="text" placeholder="Readonly input here…" readonly> --}}
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+</div>

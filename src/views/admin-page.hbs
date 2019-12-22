@@ -1,0 +1,56 @@
+{{>adminNav}}
+
+
+<div class="alert mt-5" role="alert">
+  <h1 class="text-center alert-heading">Welcome To Admin Dashboard</h1>
+  <hr>
+  <h5 class="text-center mb-0">Create and Manage Records for Student, Teacher, Class &
+    Subject</h5>
+
+</div>
+<div class="row m-5 p-3" style="height: 50vh">
+
+  <div class="col-3 p-3">
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center">
+        <h1>Classes</h1>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center display-1">{{courseCount}}</a></h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3 p-3">
+    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center">
+        <h1>Subjects</h1>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center display-1">{{subjectCount}}</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3 p-3">
+    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center">
+        <h1>Teachers</h1>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center display-1">{{studentCount}}</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3 p-3">
+    <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center">
+        <h1>Students</h1>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center display-1">{{teacherCount}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
